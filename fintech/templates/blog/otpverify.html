@@ -1,0 +1,111 @@
+{% extends "blog/header.html" %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% block title %}
+    Home - People's Bank
+{% endblock title %}
+
+
+
+{% block body %}
+    
+
+  
+    <!-- start LTR to RTL -->
+    <div class="position-fixed d-flex flex-column text-center" id="draggableDiv">
+      <button id="btn-ltr" class="rounded-2 py-2 px-3">LTR</button>
+      <span class="draggable py-2"><i class="fas fa-arrows-alt xxlr m-0"></i></span>
+      <button id="btn-rtl" class="rounded-2 py-2 px-3">RTL</button>
+  </div>
+  <!-- end LTR to RTL -->
+
+  <!-- start preloader -->
+  <div class="preloader" id="preloader"></div>
+  <!-- end preloader -->
+
+  <!-- Scroll To Top Start-->
+  <a href="javascript:void(0)" class="scrollToTop"><i class="fas fa-angle-double-up"></i></a>
+  <!-- Scroll To Top End -->
+
+
+    <!-- Forgot Password In start -->
+    <section class="log-reg forgot-pws">
+      <div class="overlay pb-120">
+        <div class="container">
+          <div class="top-head-area">
+            <div class="row d-flex align-items-center">
+              <div class="col-sm-5 col">
+                <a class="back-home" href="index.html">
+                  <img src="{% static 'assets/img/left-icon.png' %}" alt="image" />
+                  Back To Paylio
+                </a>
+              </div>
+              <div class="col-sm-5 col">
+                <a href="index.html">
+                  <img src="{% static 'assets/img/logo.png' %}" alt="image" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-6 text-center">
+              <div class="form-box">
+                <div class="icon-area">
+                  <img src="{% static 'assets/img/forgot-password-Illus.png' %}" alt="image" />
+                </div>
+                <h4>OtP verifiy</h4>
+                <p>
+                  Enter  otp sent to your email  or phone number  to continue
+                </p>
+
+                <form action="#" method='post' id='verifyform'>
+                  {% csrf_token %}
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="single-input d-flex align-items-center">
+                        <input type="text" placeholder="Enter otp" />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="btn-area">
+                    <button class="cmn-btn" id='verifybtn'>
+                        <span id="verify-text">Verify Now</span>
+                        <span class="spinner-border" style="width: 2rem; 
+                        height: 2rem; display: none;"></span> 
+                    </button>
+                </div>
+
+                </form>
+                <p class="back-login dont-acc">
+                  Go back to <a href="login.html">Login</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Forgot Password In end -->
+
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/proper-min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/fontawesome.js' %}"></script>
+    <script src="{% static 'assets/js/plugin/slick.js' %}"></script>
+    <script src="{% static 'assets/js/plugin/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugin/apexcharts.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugin/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugin/jquery.countdown.js' %}"></script>
+    <script src="{% static 'assets/js/plugin/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugin/plugin.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+  
+    {% endblock body %}
+
+  <!-- Mirrored from pixner.net/paylio/paylio-v2/forgot-password.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 30 Jan 2025 05:25:25 GMT -->
+</html>
